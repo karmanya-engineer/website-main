@@ -1,6 +1,6 @@
 import type { Item } from 'feed'
 import type { SiteConfig } from 'vitepress'
-import { writeFileSync } from 'node:fs'
+import { writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
@@ -56,8 +56,10 @@ async function generateFeed(config: SiteConfig, hostname: string) {
     json.push({ ...post, content: markdown })
   }
 
-  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2())
-  writeFileSync(path.join(config.outDir, 'news.json'), JSON.stringify(json))
+  await Promise.all([
+    writeFile(path.join(config.outDir, 'feed.rss'), feed.rss2()),
+    writeFile(path.join(config.outDir, 'news.json'), JSON.stringify(json)),
+  ])
 }
 
 export default generateFeed

@@ -47,14 +47,14 @@ async function generateOgImages(config: SiteConfig) {
     && !p.url.startsWith('/changelogs/'),
   )
 
-  for (const page of filteredPages) {
-    await generateImage({
+  await Promise.all(filteredPages.map(page =>
+    generateImage({
       page,
       template,
       outDir: config.outDir,
       fonts,
-    })
-  }
+    }),
+  ))
 
   // Extract first H3 section title and its bullet points from a changelog body
   function extractChangelogSnippet(body: string | null | undefined): string | undefined {
@@ -107,25 +107,25 @@ async function generateOgImages(config: SiteConfig) {
   // Generate OG images for dynamic changelog pages
   const releases = await getStableReleases()
 
-  for (const r of releases) {
-    if (!r.tag_name)
-      continue
-    const pageLike: Pick<ContentData, 'url' | 'frontmatter'> = {
-      url: `/changelogs/${r.tag_name}`,
-      frontmatter: {
-        // Prefer release name; fallback to tag
-        title: r.name || `Mihon ${r.tag_name.substring(1)}`,
-        description: extractChangelogSnippet(r.body),
-      } as any,
-    }
-
-    await generateImage({
-      page: pageLike,
-      template,
-      outDir: config.outDir,
-      fonts,
-    })
-  }
+  await Promise.all(
+    releases
+      .filter(r => r.tag_name)
+      .map(r => ({
+        url: `/changelogs/${r.tag_name}`,
+        frontmatter: {
+          title: r.name || `Mihon ${r.tag_name!.substring(1)}`,
+          description: extractChangelogSnippet(r.body),
+        } as any,
+      } satisfies Pick<ContentData, 'url' | 'frontmatter'>))
+      .map(pageLike =>
+        generateImage({
+          page: pageLike,
+          template,
+          outDir: config.outDir,
+          fonts,
+        }),
+      ),
+  )
 }
 
 export default generateOgImages

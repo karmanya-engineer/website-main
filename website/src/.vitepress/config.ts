@@ -101,5 +101,32 @@ export default defineConfig({
     ssr: {
       noExternal: ['element-plus'],
     },
+    optimizeDeps: {
+      include: [
+        'element-plus',
+        '@tanstack/vue-query',
+        '@vueuse/core',
+        'axios',
+        'luxon',
+        'lodash.groupby',
+      ],
+    },
+    server: {
+      fs: {
+        strict: false,
+      },
+    },
+    build: {
+      target: 'esnext',
+      sourcemap: false,
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['element-plus', '@tanstack/vue-query', '@vueuse/core', 'axios'],
+          },
+        },
+      },
+    },
   },
 })
