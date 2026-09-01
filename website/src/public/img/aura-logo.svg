@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">AURA Creative Studio</title>
+  <desc id="desc">A stylized green and gold intertwined loop logo with the word AURA and Creative Studio text beneath.</desc>
+  <defs>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f5c57"/>
+      <stop offset="30%" stop-color="#0c4e4d"/>
+      <stop offset="70%" stop-color="#0d544f"/>
+      <stop offset="100%" stop-color="#0a3f3a"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e4c089"/>
+      <stop offset="20%" stop-color="#d6a969"/>
+      <stop offset="55%" stop-color="#bf7a2b"/>
+      <stop offset="100%" stop-color="#a8611c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#b9a283" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(0 10)" filter="url(#shadow)">
+    <ellipse cx="550" cy="250" rx="230" ry="180" fill="none" stroke="url(#goldGrad)" stroke-width="76" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+    <ellipse cx="550" cy="250" rx="230" ry="180" fill="none" stroke="url(#greenGrad)" stroke-width="76" stroke-linecap="round" stroke-linejoin="round" transform="rotate(90 550 250)" opacity="0.96"/>
+
+    <path d="M 405 123 C 332 106, 247 130, 200 198 C 150 271, 173 363, 241 410 C 313 461, 428 456, 486 380 C 548 300, 538 195, 452 139 C 418 117, 386 112, 405 123 Z" fill="none" stroke="url(#greenGrad)" stroke-width="72" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
+    <path d="M 693 376 C 768 393, 853 369, 900 300 C 950 227, 927 136, 858 89 C 787 42, 672 47, 614 124 C 552 204, 562 309, 648 365 C 682 388, 708 385, 693 376 Z" fill="none" stroke="url(#goldGrad)" stroke-width="72" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
+  </g>
+
+  <g transform="translate(0 10)">
+    <text x="550" y="555" text-anchor="middle" font-size="180" font-family="Segoe UI, Arial, sans-serif" font-weight="800" letter-spacing="1" fill="#0b4e49">AURA</text>
+    <text x="550" y="635" text-anchor="middle" font-size="53" font-family="Segoe UI, Arial, sans-serif" font-weight="700" letter-spacing="9" fill="#bf7d3d">CREATIVE STUDIO</text>
+  </g>
+</svg>

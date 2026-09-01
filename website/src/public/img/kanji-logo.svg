@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kanji logo">
+  <rect width="512" height="512" fill="#8d9695"/>
+  <text x="256" y="340"
+        text-anchor="middle"
+        font-size="420"
+        font-family="'Yu Gothic', 'Meiryo', 'Hiragino Sans', 'MS Gothic', sans-serif"
+        font-weight="700"
+        fill="#0a79d2">み</text>
+</svg>
