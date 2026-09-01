@@ -1,0 +1,77 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rootDirectory": "website",
+  "framework": "vitepress",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/help/",
+      "destination": "/docs/guides/troubleshooting/",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/getting-started/",
+      "destination": "/docs/guides/getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/troubleshooting/",
+      "destination": "/docs/guides/troubleshooting/",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/source-migration/",
+      "destination": "/docs/guides/source-migration",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/backups/",
+      "destination": "/docs/guides/backups",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/tracking/",
+      "destination": "/docs/guides/tracking",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/categories/",
+      "destination": "/docs/guides/categories",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/local-manga/",
+      "destination": "/docs/guides/local-source/",
+      "permanent": true
+    },
+    {
+      "source": "/help/guides/reader-settings/",
+      "destination": "/docs/guides/reader-settings",
+      "permanent": true
+    },
+    {
+      "source": "/help/contribution/",
+      "destination": "/docs/contribute",
+      "permanent": true
+    },
+    {
+      "source": "/help/faq/",
+      "destination": "/docs/faq/general",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(webp|webm|png|jpg|svg|ico)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=15552000"
+        }
+      ]
+    }
+  ]
+}
