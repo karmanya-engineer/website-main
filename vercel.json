@@ -1,9 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rootDirectory": "website",
-  "framework": "vitepress",
-  "buildCommand": "pnpm build",
-  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [

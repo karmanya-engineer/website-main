@@ -22,3 +22,5 @@ website/src/.temp
 website/src/assets/style/sandbox.styl
 temp
 TODOs.md
+
+.vercel

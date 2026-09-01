@@ -120,13 +120,6 @@ export default defineConfig({
       target: 'esnext',
       sourcemap: false,
       chunkSizeWarningLimit: 1000,
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: ['element-plus', '@tanstack/vue-query', '@vueuse/core', 'axios'],
-          },
-        },
-      },
     },
   },
 })
